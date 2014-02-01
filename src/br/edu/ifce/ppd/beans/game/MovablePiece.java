@@ -1,5 +1,7 @@
 package br.edu.ifce.ppd.beans.game;
 
-public class MovablePiece extends Piece{
+import br.edu.ifce.ppd.util.Rank;
 
+public class MovablePiece extends Piece{
+	private Rank rank;
 }

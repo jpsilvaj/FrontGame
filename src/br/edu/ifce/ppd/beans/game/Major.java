@@ -1,5 +1,5 @@
 package br.edu.ifce.ppd.beans.game;
 
-public class Major {
+public class Major extends MovablePiece{
 
 }

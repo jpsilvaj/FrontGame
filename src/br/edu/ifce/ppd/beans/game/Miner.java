@@ -1,5 +1,5 @@
 package br.edu.ifce.ppd.beans.game;
 
-public class Miner {
+public class Miner extends MovablePiece{
 
 }

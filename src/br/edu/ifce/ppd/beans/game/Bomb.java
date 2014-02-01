@@ -1,5 +1,7 @@
 package br.edu.ifce.ppd.beans.game;
 
-public class Bomb {
 
+public class Bomb extends ImmovablePiece{
+
+	
 }

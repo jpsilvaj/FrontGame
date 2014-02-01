@@ -1,5 +1,5 @@
 package br.edu.ifce.ppd.beans.game;
 
-public class Scout {
+public class Scout extends MovablePiece{
 
 }
