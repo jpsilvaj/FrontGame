@@ -1,11 +1,13 @@
 package br.edu.ifce.ppd.view;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -46,8 +48,9 @@ public class ChatPanel extends JPanel implements ActionListener{
 		sendMessagePanel.add(textBox);
 		sendMessagePanel.add(send);
 	
-		this.add(historyMessageScrolledPane);
-		this.add(sendMessagePanel);
+		this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
+		this.add(historyMessageScrolledPane,BorderLayout.CENTER);
+		this.add(sendMessagePanel, BorderLayout.SOUTH);
 		this.setVisible(true);
 		
 	}

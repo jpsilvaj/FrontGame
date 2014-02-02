@@ -12,9 +12,11 @@ public class BoardPanel extends JPanel{
 	int i = SquareBoardSize.dimension;
 	private BoardLocation[][] board = new BoardLocation[i][i];
 	
-	
 	public BoardPanel(){
-		setLayout(new GridLayout(10,10));
+		setLayout(new GridLayout(i,i));
+		
 		
 	}
+	
+	
 }

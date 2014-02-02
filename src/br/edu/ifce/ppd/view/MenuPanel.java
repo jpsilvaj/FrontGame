@@ -33,12 +33,12 @@ public class MenuPanel extends JPanel{
 			}
 		});
 		
-		JMenu surrender = new JMenu("File");
+		JMenu surrender = new JMenu("Surrender");
 		ImageIcon surrenderIcon = new ImageIcon("surrender.png");
 		file.setMnemonic(KeyEvent.VK_S);
 		JMenuItem surrenderMenuItem = new JMenuItem("Surrender", exitIcon);
-		surrenderMenuItem.setMnemonic(KeyEvent.VK_E);
-		surrenderMenuItem.setToolTipText("Exit application");
+		surrenderMenuItem.setMnemonic(KeyEvent.VK_S);
+		surrenderMenuItem.setToolTipText("Surrender");
 		surrenderMenuItem.addActionListener( new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
@@ -75,7 +75,9 @@ public class MenuPanel extends JPanel{
 		file.add(eMenuItem);
 		help.add(aboutMenuItem);
 		help.add(rulesMenuItem);
+		surrender.add(surrenderMenuItem);
 		menuBar.add(file);
+		menuBar.add(surrender);
 		menuBar.add(help);
 		
 		this.add(menuBar);
