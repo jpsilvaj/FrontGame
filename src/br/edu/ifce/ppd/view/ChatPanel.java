@@ -49,8 +49,8 @@ public class ChatPanel extends JPanel implements ActionListener{
 		sendMessagePanel.add(send);
 	
 		this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
-		this.add(historyMessageScrolledPane,BorderLayout.CENTER);
-		this.add(sendMessagePanel, BorderLayout.SOUTH);
+		this.add(historyMessageScrolledPane);
+		this.add(sendMessagePanel);
 		this.setVisible(true);
 		
 	}

@@ -20,11 +20,13 @@ public class MainFrame extends JFrame{
 		this.setSize(1080,720);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
+		this.setResizable(false);
 		this.addPainels();
 	}
 	
 	private void addPainels(){
 		Container c = getContentPane();
+		c.setLayout(new BorderLayout(5,5));
 		c.add(BorderLayout.NORTH,menuPanel);
 		c.add(BorderLayout.SOUTH,chatPanel);
 		c.add(BorderLayout.EAST,statusPanel);

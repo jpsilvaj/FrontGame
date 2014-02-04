@@ -33,6 +33,20 @@ public class MenuPanel extends JPanel{
 			}
 		});
 		
+		
+		ImageIcon connectToServerIcon = new ImageIcon("connectToServer.png");
+		file.setMnemonic(KeyEvent.VK_C);
+		JMenuItem connectToServerMenuItem = new JMenuItem("Connect", exitIcon);
+		connectToServerMenuItem.setMnemonic(KeyEvent.VK_E);
+		connectToServerMenuItem.setToolTipText("Connect to server");
+		connectToServerMenuItem.addActionListener( new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent event) {
+				//TODO: Implementar lógica para conexão
+			}
+		});
+		
+		
 		JMenu surrender = new JMenu("Surrender");
 		ImageIcon surrenderIcon = new ImageIcon("surrender.png");
 		file.setMnemonic(KeyEvent.VK_S);
@@ -72,6 +86,7 @@ public class MenuPanel extends JPanel{
 			}
 		});
 		
+		file.add(connectToServerMenuItem);
 		file.add(eMenuItem);
 		help.add(aboutMenuItem);
 		help.add(rulesMenuItem);

@@ -10,7 +10,7 @@ public class BoardLocation {
 	private Piece piece;
 	
 	public BoardLocation(Piece piece, int row, int column){
-		this.piece = piece;
+		this.setPiece(piece);
 		this.row = row;
 		this.column = column;
 	}
@@ -32,6 +32,14 @@ public class BoardLocation {
 	}
 	public void setColumn(int column) {
 		this.column = column;
+	}
+
+	public Piece getPiece() {
+		return piece;
+	}
+
+	public void setPiece(Piece piece) {
+		this.piece = piece;
 	}
 	
 }
