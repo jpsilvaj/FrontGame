@@ -1,7 +1,7 @@
 package br.edu.ifce.ppd.util.engine.handler;
 
 import br.edu.ifce.ppd.commons.TwoPiecesOnePlaceException;
-import br.edu.ifce.ppd.view.BoardLocation;
+import br.edu.ifce.ppd.util.BoardLocation;
 
 public class CollisionHandler {
 

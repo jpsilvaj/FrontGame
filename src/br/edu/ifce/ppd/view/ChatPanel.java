@@ -1,7 +1,7 @@
 package br.edu.ifce.ppd.view;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,7 +27,7 @@ public class ChatPanel extends JPanel implements ActionListener{
 	}
 
 	private void configureChat(){
-		historyMessage = new JTextArea(10,30);
+		historyMessage = new JTextArea(5,30);
 		historyMessage.setEditable(false);
 		historyMessage.setLineWrap(true);
 		historyMessage.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.DARK_GRAY));
@@ -52,6 +52,7 @@ public class ChatPanel extends JPanel implements ActionListener{
 		this.add(historyMessageScrolledPane);
 		this.add(sendMessagePanel);
 		this.setVisible(true);
+		this.setMaximumSize(new Dimension(20,20));
 		
 	}
 

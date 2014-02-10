@@ -21,8 +21,9 @@ public class MenuPanel extends JPanel{
 		JMenuBar menuBar = new JMenuBar();
 		
 		JMenu file = new JMenu("File");
-		ImageIcon exitIcon = new ImageIcon("exit.png");
 		file.setMnemonic(KeyEvent.VK_F);
+		
+		ImageIcon exitIcon = new ImageIcon("exit.png");
 		JMenuItem eMenuItem = new JMenuItem("Exit", exitIcon);
 		eMenuItem.setMnemonic(KeyEvent.VK_E);
 		eMenuItem.setToolTipText("Exit application");
@@ -33,11 +34,9 @@ public class MenuPanel extends JPanel{
 			}
 		});
 		
-		
 		ImageIcon connectToServerIcon = new ImageIcon("connectToServer.png");
-		file.setMnemonic(KeyEvent.VK_C);
-		JMenuItem connectToServerMenuItem = new JMenuItem("Connect", exitIcon);
-		connectToServerMenuItem.setMnemonic(KeyEvent.VK_E);
+		JMenuItem connectToServerMenuItem = new JMenuItem("Connect", connectToServerIcon);
+		connectToServerMenuItem.setMnemonic(KeyEvent.VK_C);
 		connectToServerMenuItem.setToolTipText("Connect to server");
 		connectToServerMenuItem.addActionListener( new ActionListener() {
 			@Override
@@ -45,12 +44,24 @@ public class MenuPanel extends JPanel{
 				//TODO: Implementar lógica para conexão
 			}
 		});
+
+		ImageIcon hostIcon = new ImageIcon("host.png");
+		JMenuItem hostMenuItem = new JMenuItem("Host", hostIcon);
+		hostMenuItem.setMnemonic(KeyEvent.VK_H);
+		hostMenuItem.setToolTipText("Host connection");
+		hostMenuItem.addActionListener( new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent event) {
+				//TODO: Implementar lógica para receber a conexão
+			}
+		});
 		
 		
 		JMenu surrender = new JMenu("Surrender");
+		surrender.setMnemonic(KeyEvent.VK_S);
+		
 		ImageIcon surrenderIcon = new ImageIcon("surrender.png");
-		file.setMnemonic(KeyEvent.VK_S);
-		JMenuItem surrenderMenuItem = new JMenuItem("Surrender", exitIcon);
+		JMenuItem surrenderMenuItem = new JMenuItem("Surrender", surrenderIcon);
 		surrenderMenuItem.setMnemonic(KeyEvent.VK_S);
 		surrenderMenuItem.setToolTipText("Surrender");
 		surrenderMenuItem.addActionListener( new ActionListener() {
@@ -62,10 +73,10 @@ public class MenuPanel extends JPanel{
 		
 		
 		JMenu help = new JMenu("Help");
-		file.setMnemonic(KeyEvent.VK_H);
+		help.setMnemonic(KeyEvent.VK_H);
 		
 		ImageIcon aboutIcon = new ImageIcon("about.png");
-		JMenuItem aboutMenuItem = new JMenuItem("About", exitIcon);
+		JMenuItem aboutMenuItem = new JMenuItem("About", aboutIcon);
 		aboutMenuItem.setMnemonic(KeyEvent.VK_A);
 		aboutMenuItem.setToolTipText("About application");
 		aboutMenuItem.addActionListener( new ActionListener() {
@@ -76,7 +87,7 @@ public class MenuPanel extends JPanel{
 		});
 		
 		ImageIcon rulesIcon = new ImageIcon("rules.png");
-		JMenuItem rulesMenuItem = new JMenuItem("Rules", exitIcon);
+		JMenuItem rulesMenuItem = new JMenuItem("Rules", rulesIcon);
 		rulesMenuItem.setMnemonic(KeyEvent.VK_R);
 		rulesMenuItem.setToolTipText("Game Rules");
 		rulesMenuItem.addActionListener( new ActionListener() {
@@ -87,6 +98,7 @@ public class MenuPanel extends JPanel{
 		});
 		
 		file.add(connectToServerMenuItem);
+		file.add(hostMenuItem);
 		file.add(eMenuItem);
 		help.add(aboutMenuItem);
 		help.add(rulesMenuItem);

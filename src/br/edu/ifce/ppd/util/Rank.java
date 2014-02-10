@@ -10,7 +10,7 @@ public enum Rank {
 	MAJOR(7),
 	COLONEL(8),
 	GENERAL(9),
-	MARSHAL(10),
+	MARSHALL(10),
 	BOMB(11),
 	FLAG(12);
 

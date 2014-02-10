@@ -3,8 +3,10 @@ package br.edu.ifce.ppd.view;
 import java.awt.BorderLayout;
 import java.awt.Container;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class MainFrame extends JFrame{
 
@@ -13,7 +15,7 @@ public class MainFrame extends JFrame{
 	HelperPanel helperPanel = new HelperPanel();
 	StatusPanel statusPanel = new StatusPanel();
 	BoardPanel boardPanel = new BoardPanel();
-	
+	PiecePanel piecePanel = new PiecePanel();
 	
 	public MainFrame(){
 		super("FrontGame");
@@ -22,6 +24,7 @@ public class MainFrame extends JFrame{
 		this.setVisible(true);
 		this.setResizable(false);
 		this.addPainels();
+		this.pack();
 	}
 	
 	private void addPainels(){
@@ -30,6 +33,7 @@ public class MainFrame extends JFrame{
 		c.add(BorderLayout.NORTH,menuPanel);
 		c.add(BorderLayout.SOUTH,chatPanel);
 		c.add(BorderLayout.EAST,statusPanel);
+		c.add(BorderLayout.WEST,piecePanel);
 		c.add(BorderLayout.CENTER,boardPanel);
 	};
 }
