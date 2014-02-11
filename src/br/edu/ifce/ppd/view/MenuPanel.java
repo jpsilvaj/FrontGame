@@ -8,7 +8,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+import br.edu.ifce.ppd.util.Constants;
 
 public class MenuPanel extends JPanel{
 	JMenuBar menuBar;
@@ -19,7 +22,7 @@ public class MenuPanel extends JPanel{
 	
 	private void configureMenuBar(){
 		JMenuBar menuBar = new JMenuBar();
-		
+		JOptionPane option = new JOptionPane();
 		JMenu file = new JMenu("File");
 		file.setMnemonic(KeyEvent.VK_F);
 		
@@ -41,6 +44,7 @@ public class MenuPanel extends JPanel{
 		connectToServerMenuItem.addActionListener( new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
+				JOptionPane.showMessageDialog(null,"Not yet implemented");
 				//TODO: Implementar lógica para conexão
 			}
 		});
@@ -52,6 +56,7 @@ public class MenuPanel extends JPanel{
 		hostMenuItem.addActionListener( new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
+				JOptionPane.showMessageDialog(null,"Not yet implemented");
 				//TODO: Implementar lógica para receber a conexão
 			}
 		});
@@ -67,10 +72,25 @@ public class MenuPanel extends JPanel{
 		surrenderMenuItem.addActionListener( new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
+				JOptionPane.showMessageDialog(null,"Not yet implemented");
 				//TODO: Surrender action
 			}
 		});
 		
+		JMenu sampleStrategy = new JMenu("Samples");
+		surrender.setMnemonic(KeyEvent.VK_S);
+		
+		ImageIcon samplesIcon = new ImageIcon("samples.png");
+		JMenuItem samplesMenuItem = new JMenuItem("Samples", samplesIcon);
+		samplesMenuItem.setMnemonic(KeyEvent.VK_S);
+		samplesMenuItem.setToolTipText("Samples");
+		samplesMenuItem.addActionListener( new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent event) {
+				JOptionPane.showMessageDialog(null,"Not yet implemented");
+				//TODO: Surrender action
+			}
+		});
 		
 		JMenu help = new JMenu("Help");
 		help.setMnemonic(KeyEvent.VK_H);
@@ -82,7 +102,7 @@ public class MenuPanel extends JPanel{
 		aboutMenuItem.addActionListener( new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
-				//TODO: Add text about application
+				JOptionPane.showMessageDialog(null,Constants.ABOUT);
 			}
 		});
 		
@@ -93,18 +113,20 @@ public class MenuPanel extends JPanel{
 		rulesMenuItem.addActionListener( new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
-				//TODO: Add action to show game rules
+				JOptionPane.showMessageDialog(null,Constants.RULES);
 			}
 		});
 		
 		file.add(connectToServerMenuItem);
 		file.add(hostMenuItem);
 		file.add(eMenuItem);
+		surrender.add(surrenderMenuItem);
+		sampleStrategy.add(samplesMenuItem);
 		help.add(aboutMenuItem);
 		help.add(rulesMenuItem);
-		surrender.add(surrenderMenuItem);
 		menuBar.add(file);
 		menuBar.add(surrender);
+		menuBar.add(sampleStrategy);
 		menuBar.add(help);
 		
 		this.add(menuBar);

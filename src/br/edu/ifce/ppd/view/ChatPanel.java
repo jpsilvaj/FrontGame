@@ -9,10 +9,13 @@ import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
+
+import br.edu.ifce.ppd.util.Constants;
 
 
 public class ChatPanel extends JPanel implements ActionListener{
@@ -58,6 +61,7 @@ public class ChatPanel extends JPanel implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		JOptionPane.showMessageDialog(null,"Not yet implemented");
 		//TODO: Implement action
 		
 	}

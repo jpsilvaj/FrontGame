@@ -1,5 +1,7 @@
 package br.edu.ifce.ppd.util;
 
+import java.net.URL;
+
 import javax.swing.ImageIcon;
 
 import br.edu.ifce.ppd.beans.game.Bomb;
@@ -18,22 +20,22 @@ import br.edu.ifce.ppd.commons.IconNotFoundException;
 
 public class PickUpImages {
 
-	public static ImageIcon getImageIconByPieceAndColor(Piece piece) throws IconNotFoundException{
+	public ImageIcon getImageIconByPieceAndColor(Piece piece) throws IconNotFoundException{
 		ImageIcon newImageIcon = null;
 		
 		switch(piece.getColor()){
 			case BLUE:
 				try {
-					newImageIcon = piece.getHidden() == true ? new ImageIcon(Constants.URL_BLUE_IMAGES+"mistery.png"):
-													getIcon(piece,Constants.URL_BLUE_IMAGES);
+					newImageIcon = piece.getHidden() == true ? new ImageIcon(getClass().getResource("/blue/mistery.png")):
+													getIcon(piece,getClass().getResource("/blue"));
 				}catch (IconNotFoundException e) {
 					e.printStackTrace();
 				}
 				break;
 			case RED:
 				try {
-				newImageIcon = piece.getHidden() == true ? new ImageIcon(Constants.URL_RED_IMAGES+"mistery.png"):
-												getIcon(piece,Constants.URL_IMAGES);
+				newImageIcon = piece.getHidden() == true ? new ImageIcon(getClass().getResource("/red/mistery.png")):
+												getIcon(piece,getClass().getResource("/red"));
 				}catch (IconNotFoundException e) {
 					e.printStackTrace();
 				}
@@ -42,39 +44,39 @@ public class PickUpImages {
 		return newImageIcon;
 	}
 	
-	private static ImageIcon getIcon(Piece piece, String directoryColors) throws IconNotFoundException{
+	private ImageIcon getIcon(Piece piece, URL directoryColors) throws IconNotFoundException{
 		if(piece instanceof Bomb){
-			return new ImageIcon(directoryColors+"bomb.png");
+			return new ImageIcon(directoryColors+"/bomb.png");
 		}
 		else if(piece instanceof Flag){
-			return new ImageIcon(directoryColors+"flag.gif");
+			return new ImageIcon(directoryColors+"/flag.gif");
 		}
 		else if(piece instanceof Spy){
-			return new ImageIcon(directoryColors+"spy.png");
+			return new ImageIcon(directoryColors+"/spy.png");
 		}
 		else if(piece instanceof Scout){
-			return new ImageIcon(directoryColors+"scout.png");
+			return new ImageIcon(directoryColors+"/scout.png");
 		}
 		else if(piece instanceof Miner){
-			return new ImageIcon(directoryColors+"miner.png");
+			return new ImageIcon(directoryColors+"/miner.png");
 		}
 		else if(piece instanceof Sergeant){
-			return new ImageIcon(directoryColors+"sergeant.png");
+			return new ImageIcon(directoryColors+"/sergeant.png");
 		}
 		else if(piece instanceof Lieutnaut){
-			return new ImageIcon(directoryColors+"lieutnaut.png");
+			return new ImageIcon(directoryColors+"/lieutnaut.png");
 		}
 		else if(piece instanceof Captain){
-			return new ImageIcon(directoryColors+"captain.png");
+			return new ImageIcon(directoryColors+"/captain.png");
 		}
 		else if(piece instanceof Major){
-			return new ImageIcon(directoryColors+"major.png");
+			return new ImageIcon(directoryColors+"/major.png");
 		}
 		else if(piece instanceof Colonel){
-			return new ImageIcon(directoryColors+"colonel.png");
+			return new ImageIcon(directoryColors+"/colonel.png");
 		}
 		else if(piece instanceof Marshall){
-			return new ImageIcon(directoryColors+"marshal.png");
+			return new ImageIcon(directoryColors+"/marshall.png");
 		}
 		throw new IconNotFoundException();
 	}

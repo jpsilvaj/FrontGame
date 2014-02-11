@@ -51,7 +51,8 @@ public abstract class Piece {
 	private ImageIcon setPieceImage(){
 		ImageIcon newImageIcon = null;
 		try {
-			newImageIcon = PickUpImages.getImageIconByPieceAndColor(this);
+			PickUpImages pickupImages = new PickUpImages();
+			newImageIcon = pickupImages.getImageIconByPieceAndColor(this);
 		} catch (IconNotFoundException e) {
 			e.printStackTrace();
 		}

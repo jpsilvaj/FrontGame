@@ -1,5 +1,6 @@
 package br.edu.ifce.ppd.view;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -8,9 +9,9 @@ import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 
 import br.edu.ifce.ppd.util.BoardLocation;
-import br.edu.ifce.ppd.util.Constants;
 import br.edu.ifce.ppd.util.SquareBoardSize;
 
 public class BoardPanel extends JPanel{
@@ -43,7 +44,7 @@ public class BoardPanel extends JPanel{
 	public JLabel mainPanel;
 	
 	public BoardPanel(){
-		ImageIcon backgroundImage = new ImageIcon(Constants.URL_IMAGES+"classicmap.jpeg");
+		ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/classicmap.jpeg"));
 		mainPanel = new JLabel(backgroundImage){
 			@Override
 			public Dimension getPreferredSize() {
